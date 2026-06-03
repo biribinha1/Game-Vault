@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+
+<style>
+    .form-control {
+        background-color: #333;
+        color: white;
+    }
+    
+
+</style>
+
+<body>
+    <form action="/adicionar" method="POST" class="form-control">
+    
+        <div class="mb-3">
+            <label for="titulo">Titulo:</label>
+            <input type="text" id="titulo" name="titulo" required>
+        </div>
+        <div class="mb-3">
+            <label for="plataforma">Plataforma:</label>
+            <input type="text" id="plataforma" name="plataforma" required>
+        </div>
+        <div class="mb-3">
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status" required>
+        </div>
+        <div class="mb-3">
+            <label for="nota">Nota:</label>
+            <input type="number" min="0" max="10" id="nota" name="nota" required>
+        </div>
+        <div class="mb-3">
+            <label for="capa">URL da capa:</label>
+        <input type="text" id="capa" name="capa_url" required>
+        </div>
+        <button  class="btn btn-primary" type="submit">cadastrar</button>
+    </form>
+</body>
+
+<%- include('partials/footer') %>

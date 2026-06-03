@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+
+
+<h1 class="mb-4">Meu Cofre de Jogos</h1>
+
+<div class="row"> 
+    <div class="col-12"> 
+        <div class="card h-100">
+            <div class="card-body" >
+                <h1>Catálogo de Jogos</h1>
+
+                <% if (jogos.length > 0) { %>
+        
+                    <ul class="list-group w-100">
+                        <% jogos.forEach(jogo => { %>
+                
+                            <li class="list-group-item d-flex flex-column">
+                                
+                                <h3><%= jogo.titulo %></h3>
+                                <span class="badge bg-warning text-dark">
+                                    <%= jogo.status %>
+                                </span>
+                                <img src="<%= jogo.capa_url %>" alt="">
+                                <div>
+                                    <a href="/deletar/<%=jogo.id%>" method="GET">
+                                        <button type="submit" class="btn btn-danger btn-sm">Deletar</button>
+                                    </a>
+                                    <h6 class="nota"><%= jogo.nota %>/10</h6>
+                                </div>
+
+                            </li>
+            
+                        <% }); %> </ul>
+
+                    <% } else { %>
+                        <p>Nenhum jogo cadastrado no momento.</p>
+                    <% } %>
+            </div>
+        </div>
+    </div>
+</div> 
+
+
+<%- include('partials/footer') %>
