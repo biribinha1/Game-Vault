@@ -1,2 +1,2 @@
 # Game-Vault
-catalogo de jogod
+catalogo de jogos
